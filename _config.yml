@@ -1,4 +1,4 @@
-theme: jekyll-theme-cayman
+theme: jekyll-theme-leap-day
 include:
   - basic commands.md
   - README.md
