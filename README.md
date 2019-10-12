@@ -1,2 +1,2 @@
 
-[ddd](Basic commands.md)
+[ddd](/Basic commands.md)
