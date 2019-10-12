@@ -31,12 +31,18 @@ When you open linux terminal. You probably will see information like this
 ```console
 user_information@computer_information: ~$
 ```
-The `~` indicate you are now in the home directory.
+The `~` indicate you are now in Sthe home directory.
 You can use
 
 ```console # this gives you your current working directory
 pwd
 ```
+
+You will see
+```console
+/home/chunhui
+```
+
 it should return a directory like this `home\user_name`
 
 The `$` indicate that you are a regular user to this system. By regular, I mean you don't have high level operation authority to 
@@ -67,10 +73,11 @@ Paths start with `\` are considered as absolute path, otherwise relative paths.
 In the `ls` section, I've tell you how to explore what are inside a directory.
 
 ```console
-
+bowtie-0.12.8  Desktop  Documents  Downloads  examples.desktop  Junk  Music  Pictures  Public  R  snap  Templates  Videos
 ```
 
 # file operation
 ```console
  
 ```
+
