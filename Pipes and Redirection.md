@@ -30,8 +30,6 @@ cat err.txt
 ```
 
 **To sum up**, redirection redirect the output into a file.
-**Difference**
-
 
 
 # Pipe
@@ -39,4 +37,62 @@ While redirect is used to pass output to either a file or stream, pipe is used t
 ```console
 ls -alh | less
 ```
+The next examples show how to use `|` with filtering
+```console
+echo -e 'dave:we\nuser:love\nsomeone:linux\nsomeone:linux' > file.txt #  enable interpretation of backslash escapes
+#example 1 
+cat file.txt | cut -d: -f2 # '-d:' means use ':' as delim, '-f2' select only the second field
+# you will get this result
+# we
+# love
+# linux
+
+# example 2
+cat file.txt | sort -bf # -b ignoring leading blanks -f ignoring case
+
+# example 3
+cat file.txt | uniq # only print unique lines
+
+# example 4
+cat file.txt | grep user
+
+```
+
+
 Basically, it connect the standard output of the first utility to the second utility.
+
+# &&
+Run the second command if only the first command succeed
+```console
+echo -e 'dave:we\nuser:love\nsomeone:linux' > file.txt #  enable interpretation of backslash escapes
+
+#example 1
+ls file.txt && echo 'astonishing success'
+
+#example 2
+
+
+```
+# some other useful commands
+`grep` is a very useful regular expression matching command, it will print lines that match a pattern in files
+```console
+grep someone file.txt
+
+# Let create another demo file
+echo -e 'someone said something\nthis is unrelated' > err.txt
+grep someone ./* # grep lines that contain 'someone' on all files on current path
+
+# you should get something like this
+# grep: ./Courses: Is a directory
+#./err.txt:someone said something
+#./file.txt:someone:linux
+
+
+# pipe complex
+```
+grep someone ./* | uniq | cut -d: -f1
+```
+
+
+
+
